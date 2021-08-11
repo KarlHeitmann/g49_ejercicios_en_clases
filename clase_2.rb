@@ -1,5 +1,5 @@
 # Transformas las notas rojas en false y las notas azules en true, en un nuevo arreglo llamado promedios_aprobados
-# Equivalente a map
+# EQUIVALENTE A MAP
 
 promedios = [4.0, 5.2, 2.1, 6.3, 5.9, 5.7, 3.4]
 
@@ -22,7 +22,7 @@ end
 =begin
 while i < promedios.length
   promedio = promedios[i]
-  promedios_aprobados.push(promedio >= 4.0) # ESTO ES EQUIVALENTE A LO QUE HAY ENTRE LAS LINEAS 12 y 16
+  promedios_aprobados.push(promedio >= 4.0) # ESTO ES EQUIVALENTE AL BLOQUE ANTERIOR, DE LA LINEA 11 a la 20
   # puts "Nota #{i}: #{notas[i]}"
   i = i + 1
 end

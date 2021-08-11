@@ -1,5 +1,5 @@
 # Transformas las notas rojas en false y las notas azules en true, en un nuevo arreglo llamado promedios_aprobados
-# Equivalente a map
+# EQUIVALENTE A MAP
 
 # CLEAN CODE
 

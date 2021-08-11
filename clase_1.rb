@@ -1,4 +1,4 @@
-# Seleccionar solo las notas rojas
+# Seleccionar solo las notas rojas (menor que 4)
 # ESTE ES EL EQUIVALENTE AL USO DE REJECT SELECT
 
 notas = [4.0, 5.2, 2.1, 6.3, 5.9, 5.7, 3.4]
