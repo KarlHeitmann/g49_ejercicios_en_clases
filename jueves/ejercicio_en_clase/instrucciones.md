@@ -9,7 +9,7 @@ Haga un programa `generador_notas.rb`, que dado un número indeterminado de argu
 - Para cada nombre, el programa debe generar una cantidad de notas aleatorias (entre 7 y 10 notas). Las notas van del 1.0 como mínimo, al 7.0 como máximo
 - Para cada nombre recibido, creará un archivo llamado "#{nombre}.txt".
 - La primera línea del archivo "#{nombre}.txt" debe contener el nombre pasado como argumento
-- Cada línea siguiente del archivo, debe contener las notas generadas.
+- Cada línea siguiente del archivo, debe contener una de las notas generadas.
 
 Ejemplo:
 
@@ -51,3 +51,7 @@ Haga un programa `notas_a_csv.rb` que dado un número indeterminado de argumento
   - Creará un archivo llamado "promedio.csv", donde guardará en formato CSV (comma separated value) el nombre
     y el promedio de cada uno de los nombres pasados por el ARGV. Para que después el archivo pueda ser abierto
     por un software de hojas de cálculo, tal como el libre office speadsheets, el google docs, o el excel
+
+## Pista
+
+Para los desafíos del día de hoy, revise el método `.split` que tienen los strings de ruby. https://ruby-doc.org/core-2.7.2/String.html#method-i-split
