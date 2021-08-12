@@ -1,12 +1,14 @@
+output_promedio_csv = File.open "promedio.csv", "w"
+output_promedio_csv.puts "nombre,promedio"
+
 ARGV.each do |nombre|
   file_notas = File.open "#{nombre}.txt"
   lineas = file_notas.readlines
-  print lineas
-  puts
-  puts lineas[0]
+  nombre = lineas[0].chomp
+  notas = lineas[1..-1]
 
-  lineas[1..-1].each do |linea|
-    print "> #{linea}"
-  end
+  promedio = notas.reduce(0.0) {|acc, nota| acc + nota.to_f}
+
+  output_promedio_csv.puts "#{nombre},#{promedio}"
 end
 
