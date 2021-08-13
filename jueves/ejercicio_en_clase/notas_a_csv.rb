@@ -2,7 +2,7 @@ print ARGV
 puts
 puts ARGV.class
 
-recordatorio = gets.chomp
+recordatorio = gets.chomp # !!!!!!!!
 puts "recordatorio: #{recordatorio}"
 archivo_promedios = File.new "promedio.csv", "w"
 archivo_promedios.puts "nombre,promedio"
