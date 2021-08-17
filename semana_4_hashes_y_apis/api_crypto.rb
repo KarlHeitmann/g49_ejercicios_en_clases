@@ -19,7 +19,16 @@ archivo.puts "id,market_cap_rank"
 
 datos['coins'].each do |dato|
   dato['item']
-  archivo.puts "#{dato['item']['id']},#{dato['item']['market_cap_rank']}"
+  url = URI("https://api.coingecko.com/api/v3/simple/price?ids=#{dato['item']['id']}&vs_currencies=clp")
+  https = Net::HTTP.new(url.host, url.port)
+  https.use_ssl = true
+
+  request = Net::HTTP::Get.new(url)
+
+  response = https.request(request)
+  precio = JSON.parse(response.read_body)
+
+  archivo.puts "#{dato['item']['id']},#{dato['item']['market_cap_rank']},#{precio[dato['item']['id']]['clp']}"
 end
 
 archivo.close
