@@ -1,0 +1,18 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug fizzbuzz",
+      "type": "Ruby",
+      "request": "launch",
+      "program": "${workspaceRoot}/semana_4_hashes_y_apis/api_crypto.rb",
+      "args": ["5"],
+      "env": {
+        "PATH": "/home/karl/.deno/bin:/home/karl/.yarn/bin:/home/karl/.config/yarn/global/node_modules/.bin:/home/karl/.rbenv/shims:/home/karl/.rbenv/bin:/home/karl/.nvm/versions/node/v12.18.3/bin:/home/karl/bin:/usr/local/bin:/usr/bin:/bin:/usr/lib/mit/bin:/usr/lib/mit/sbin:/home/karl/pkg/flutter/bin:/usr/local/go/bin:/home/karl/.meteor:/home/karl/.local/bin"
+      }
+    }
+  ]
+}
