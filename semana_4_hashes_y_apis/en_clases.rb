@@ -4,3 +4,17 @@
 # Guarde el ID de cada una de las criptomonedas y su "market_cap_rank" en un archivo .csv
 # 2. OPCIONAL: Para cada moneda, busque la información de su precio actual, y agreguelo en el archivo .csv como una columna más
 #
+# https://www.coingecko.com/en/api/documentation
+
+require "uri"
+require "net/http"
+
+url = URI("https://api.coingecko.com/api/v3/search/trending")
+
+https = Net::HTTP.new(url.host, url.port)
+https.use_ssl = true
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
