@@ -18,3 +18,10 @@ ventas= {
   Diciembre:21000
 }
 
+ventas.each do |clave, valor|
+  # puts "clave: #{clave} --------- valor: #{valor}"
+  if valor >= 45000
+    puts valor
+  end
+end
+

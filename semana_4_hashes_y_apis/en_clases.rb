@@ -8,6 +8,7 @@
 
 require "uri"
 require "net/http"
+require "json"
 
 url = URI("https://api.coingecko.com/api/v3/search/trending")
 
@@ -17,4 +18,11 @@ https.use_ssl = true
 request = Net::HTTP::Get.new(url)
 
 response = https.request(request)
-puts response.read_body
+
+respuesta = JSON.parse response.read_body
+# respuesta = response.read_body # OJO CON ESTO: read_body devuelve un STRING. Deben "parsearlo" con el JSON.parse para usarlo como un hash o arreglo (dependiendo de que les devuelva la API)
+
+puts respuesta.class
+
+# puts respuesta["coins"]
+
