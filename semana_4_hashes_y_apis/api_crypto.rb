@@ -12,6 +12,8 @@ request = Net::HTTP::Get.new(url)
 response = https.request(request)
 datos = JSON.parse(response.read_body)
 
+puts ARGV
+
 puts datos
 archivo = File.open "tendencias.csv", "w"
 

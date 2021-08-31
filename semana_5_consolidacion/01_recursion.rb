@@ -16,9 +16,9 @@ def sumador n
   end
 end
 
-# suma_recursiva = sumador data # ¿Que pasa aqui? ver .pop, y la diferencia entre .slice y .slice!
-suma_recursiva = sumador Array.new(data)
-puts "Suma recursiva: #{suma_recursiva} de #{data}"
+suma_recursiva = sumador data # ¿Que pasa aqui? ver .pop, y la diferencia entre .slice y .slice!
+# suma_recursiva = sumador Array.new(data)
+puts " ======= Suma recursiva: #{suma_recursiva} de #{data}"
 
 data_2 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
