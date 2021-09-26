@@ -5,20 +5,30 @@
 # Usar
 # pry
 # > require_relative 'mongo_example'
+# Recargar
+# > load 'mongo_example.rb'
+
 require 'mongo'
 require 'awesome_print'
 
 def conectar_gr
-  client_gr = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'foodmart')
+  client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'foodmart')
 
-  db_gr = client_gr.database
+  db = client.database
 
   # puts db.collections # returns a list of collection objects
-  puts db_gr.collection_names # returns a list of collection names
+  puts db.collection_names # returns a list of collection names
 
-  collection = client_gr[:operations]
+  collection = client[:operations]
   puts collection
-  return [client_gr, db_gr, collection]
+  return [db, client, collection]
+end
+
+def mostrar_todo(db)
+  db.collection_names.each do |name|
+    ap "================== #{name} ==========================="
+    ap db[name].find.first
+  end
 end
 
 # desestructura:
