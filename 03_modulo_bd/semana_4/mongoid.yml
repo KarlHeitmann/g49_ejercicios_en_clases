@@ -1,0 +1,8 @@
+development:
+  clients:
+    default:
+      database: foodmart
+      hosts:
+        - localhost:27017
+      #options:
+      #  log_level: :debug
