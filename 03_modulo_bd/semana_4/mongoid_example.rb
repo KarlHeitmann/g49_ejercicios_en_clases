@@ -18,6 +18,78 @@ class ProductClass
   has_many :products, foreign_key: 'product_class_id', primary_key: 'product_class_id'
 end
 
+class Account
+  include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+  store_in collection: "account", database: "foodmart"
+end
+
+class Category
+  include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+  store_in collection: "category", database: "foodmart"
+end
+
+class Currency
+  include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+  store_in collection: "currency", database: "foodmart"
+end
+
+class Customer
+  include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+  store_in collection: "customer", database: "foodmart"
+end
+
+class Days
+  include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+  store_in collection: "days", database: "foodmart"
+end
+
+class Department
+  include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+  store_in collection: "department", database: "foodmart"
+
+  has_many :employees, foreign_key: "department_id", primary_key: "department_id"
+end
+
+class Employee
+  include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+  store_in collection: "employee", database: "foodmart"
+
+  belongs_to :department, foreign_key: "department_id", primary_key: "department_id"
+  has_many :employee_closures, foreign_key: "employee_id", primary_key: "employee_id"
+end
+
+class EmployeeClosure
+  include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+  store_in collection: "employee_closure", database: "foodmart"
+
+  belongs_to :employee, foreign_key: "employee_id", primary_key: "employee_id"
+end
+
+class Position
+  include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+  store_in collection: "position", database: "foodmart"
+
+  has_many :employees, foreign_key: "position_id", primary_key: "position_id"
+end
+
+=begin
+class
+  include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+  store_in collection: "", database: "foodmart"
+end
+=end
+
+=begin
 class Promotion
   include Mongoid::Document
 
@@ -33,6 +105,7 @@ class Promotion
   field :end_date, type: DateTime
 
 end
+=end
 
 def ejemplo_query_1
   product_classes = ProductClass.all
