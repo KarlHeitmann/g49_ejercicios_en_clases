@@ -10,22 +10,30 @@ class Dado
 end
 
 class Carta
-  @@pintas_posibles = []
-  @@numeros_posibles = []
 
   def initialize(pinta=nil, numero=nil)
+    @pintas_posibles = [] if @pintas_posibles.nil?
+    @numeros_posibles = [] if @numeros_posibles.nil?
     if pinta.nil?
-      @pinta = @@pintas_posibles.sample
+      @pinta = @pintas_posibles.sample
     else
-      raise "Error: pinta no incluida. Escoja entre los siguientes valores: #{@@pintas_posibles}" unless @@pintas_posibles.include? pinta
+      raise "Error: pinta no incluida. Escoja entre los siguientes valores: #{@pintas_posibles}" unless @pintas_posibles.include? pinta
       @pinta = pinta
     end
     if numero.nil?
-      @numero = @@numeros_posibles.sample
+      @numero = @numeros_posibles.sample
     else
-      raise "Error: numero no incluida. Escoja entre los siguientes valores: #{@@numeros_posibles}" unless @@numeros_posibles.include? numero
+      raise "Error: numero no incluida. Escoja entre los siguientes valores: #{@numeros_posibles}" unless @numeros_posibles.include? numero
       @numero = numero
     end
+  end
+
+  def self.pintas_posibles
+    @pintas_posibles
+  end
+
+  def self.numeros_posibles
+    @numeros_posibles
   end
 
   def to_s
@@ -34,17 +42,17 @@ class Carta
 end
 
 class CartaEspanola < Carta
-  @@pintas_posibles = ['oros', 'copas', 'espadas', 'bastos']
-  @@numeros_posibles = [1,2,3,4,5,6,7,10,11,12]
   def initialize(pinta=nil, numero=nil)
+    @pintas_posibles = ['oros', 'copas', 'espadas', 'bastos']
+    @numeros_posibles = [1,2,3,4,5,6,7,10,11,12]
     super(pinta, numero)
   end
 end
 
 class CartaInglesa < Carta
-  @@pintas_posibles = ['picas', 'corazones', 'diamantes', 'trebol']
-  @@numeros_posibles = [1,2,3,4,5,6,7,8,9,10,11,12]
   def initialize(pinta=nil, numero=nil)
+    @pintas_posibles = ['picas', 'corazones', 'diamantes', 'trebol']
+    @numeros_posibles = [1,2,3,4,5,6,7,8,9,10,11,12]
     super(pinta, numero)
   end
 end
