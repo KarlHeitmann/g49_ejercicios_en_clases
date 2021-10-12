@@ -1,10 +1,10 @@
 cartas_sacar = ARGV[0].to_i
 puts cartas_sacar
-class BarajaEspanola
+class BarajaCartaEspanola
   PINTAS_POSIBLES = ['oros', 'copas', 'espadas', 'bastos']
   NUMEROS_POSIBLE = [1,2,3,4,5,6,7,10,11,12]
   @@cartas = []
-  def initialize
+  def generar
     @pinta = PINTAS_POSIBLES.sample
     @numero = NUMEROS_POSIBLE.sample
     carta_sacada = {pinta: @pinta, numero: @numero}
@@ -17,4 +17,6 @@ class BarajaEspanola
   end
 end
 
-cartas_sacar.times {|i| puts BarajaEspanola.new }
+primera_carta = BarajaCartaEspanola.new
+puts BarajaCartaEspanola.cartas
+cartas_sacar.times {|i| puts BarajaCartaEspanola.new }
