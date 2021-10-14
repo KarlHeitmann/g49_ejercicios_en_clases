@@ -1,3 +1,5 @@
+require_relative 'carta'
+
 class CartaEspanola < Carta
   def initialize(numero, pinta)
     @pintas_posibles = ['oros', 'copas', 'espadas', 'bastos']
