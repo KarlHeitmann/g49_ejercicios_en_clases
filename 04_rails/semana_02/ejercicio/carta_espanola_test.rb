@@ -5,7 +5,7 @@ require_relative 'carta_espanola'
 
 class TestCartaEspanola < Test::Unit::TestCase
     def test_method_to_s
-      carta = CartaEspanola.new('espadas', 10)
+      carta = CartaEspanola.new(10, 'espadas')
       assert_equal(carta.to_s, "10 - espadas")
     end
 end
