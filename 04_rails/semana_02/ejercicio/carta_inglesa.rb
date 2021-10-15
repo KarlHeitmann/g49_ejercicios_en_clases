@@ -21,7 +21,7 @@ class CartaInglesa < Carta
     else
       puntaje_pinta = 1
     end
-    return puntaje_pinta
+    return puntaje_pinta + @numero
   end
 
   def poker_g49(oponente)

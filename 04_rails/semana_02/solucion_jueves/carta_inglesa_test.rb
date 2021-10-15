@@ -28,6 +28,11 @@ class TestCartaInglesa < Test::Unit::TestCase
       carta_perdedora = CartaInglesa.new(5, 'corazon')
       assert_equal(carta_ganadora.poker_g49(carta_perdedora), 'ganador')
     end
+    def test_con_as
+      carta_ganadora = CartaInglesa.new('as', 'diamante')
+      carta_perdedora = CartaInglesa.new(10, 'diamante')
+      assert_equal(carta_ganadora.poker_g49(carta_perdedora), 'ganador')
+    end
 end
 
 
