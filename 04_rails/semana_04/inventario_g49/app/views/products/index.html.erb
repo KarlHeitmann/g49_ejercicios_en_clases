@@ -1,0 +1,8 @@
+<h1>Products#index</h1>
+<p>Find me in app/views/products/index.html.erb</p>
+
+<ul>
+  <% @products.each do |product| %>
+    <li><%=product.nombre%> <%= image_tag product.imagen_url, class: "img-fluid" %></li>
+  <% end %>
+</ul>
