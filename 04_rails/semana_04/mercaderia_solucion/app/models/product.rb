@@ -10,4 +10,5 @@
 #  updated_at      :datetime         not null
 #
 class Product < ApplicationRecord
+  # TODO Colocar las validaciones
 end

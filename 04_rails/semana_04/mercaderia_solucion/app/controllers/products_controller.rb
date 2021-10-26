@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     else
       flash[:danger] = "Errores al crear el producto"
     end
-    redirect_to products__path
+    redirect_to products__path # HACK ERROR
   end
 
   private
