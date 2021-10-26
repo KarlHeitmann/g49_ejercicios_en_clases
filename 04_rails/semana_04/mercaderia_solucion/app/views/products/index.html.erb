@@ -1,0 +1,20 @@
+
+<table class="table table-striped d-none d-sm-block">
+  <thead>
+    <tr class="thead-dark">
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Código de Barra</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.nombre %></td>
+        <td><%= product.descripcion %></td>
+        <td><%= product.codigo_de_barra %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
