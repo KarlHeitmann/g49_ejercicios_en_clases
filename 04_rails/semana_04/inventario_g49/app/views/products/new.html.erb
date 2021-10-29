@@ -1,2 +1,25 @@
 <h1>Products#new</h1>
 <p>Find me in app/views/products/new.html.erb</p>
+
+
+<%= form_with(model: @product, url: product_path, class: 'form') do |form| %>
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :imagen_url %>
+    <%= form.text_field :imagen_url, class:"form-control" %>
+  </div>
+
+
+  <%= form.submit class: "btn btn-primary my-3" %>
+<% end %>
+
