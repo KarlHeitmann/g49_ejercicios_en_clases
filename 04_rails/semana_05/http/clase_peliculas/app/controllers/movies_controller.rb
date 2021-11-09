@@ -1,6 +1,9 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
 
+  def test
+  end
+
   # GET /movies or /movies.json
   def index
     @movies = Movie.all
@@ -21,6 +24,9 @@ class MoviesController < ApplicationController
 
   # POST /movies or /movies.json
   def create
+    puts "============================"
+    puts params[:movie]
+    puts "============================"
     @movie = Movie.new(movie_params)
 
     respond_to do |format|
@@ -58,6 +64,7 @@ class MoviesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    # DRY = Don't Repeat Yourself. DRY = SECO
     def set_movie
       @movie = Movie.find(params[:id])
     end
