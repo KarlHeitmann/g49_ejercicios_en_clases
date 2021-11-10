@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :movies
 
   get 'movies_test', to: 'movies#test', as: 'movies_test_link'
