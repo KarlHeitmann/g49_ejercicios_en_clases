@@ -16,6 +16,7 @@ class MoviesController < ApplicationController
   # GET /movies/new
   def new
     @movie = Movie.new
+    @categories = Category.pluck :name, :id
   end
 
   # GET /movies/1/edit
@@ -27,6 +28,7 @@ class MoviesController < ApplicationController
     puts "============================"
     puts params[:movie]
     puts "============================"
+    1/0
     @movie = Movie.new(movie_params)
 
     respond_to do |format|
@@ -71,6 +73,6 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:titulo, :lanzamiento)
+      params.require(:movie).permit(:titulo, :lanzamiento, :category_id)
     end
 end
