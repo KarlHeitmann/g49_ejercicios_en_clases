@@ -1,4 +1,4 @@
-<%= form_with(model: movie) do |form| %>
+<%= form_with(model: [category, movie]) do |form| %>
   <% if movie.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
@@ -21,10 +21,6 @@
     <%= form.date_select :lanzamiento %>
   </div>
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.select :category_id, categories %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>

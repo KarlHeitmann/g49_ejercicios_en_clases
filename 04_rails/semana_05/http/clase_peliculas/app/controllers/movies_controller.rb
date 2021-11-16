@@ -6,21 +6,25 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    @category = Category.find params[:category_id]
+    @movies = @category.movies
   end
 
   # GET /movies/1 or /movies/1.json
   def show
+    @category = Category.find params[:category_id]
   end
 
   # GET /movies/new
   def new
     @movie = Movie.new
+    @category = Category.find(params[:category_id])
     @categories = Category.pluck :name, :id
   end
 
   # GET /movies/1/edit
   def edit
+    @category = Category.find params[:category_id]
   end
 
   # POST /movies or /movies.json
@@ -28,12 +32,14 @@ class MoviesController < ApplicationController
     puts "============================"
     puts params[:movie]
     puts "============================"
-    1/0
     @movie = Movie.new(movie_params)
-
+    @category = Category.find params[:category_id]
+    @movie.category_id = @category.id
+    # @movie.category_id = params[:category]
     respond_to do |format|
       if @movie.save
-        format.html { redirect_to @movie, notice: "Movie was successfully created." }
+        format.html { redirect_to category_movie_path(@category.id, @movie), notice: "Movie was successfully created." }
+        # format.html { redirect_to category_movie(params[:category_id], @movie), notice: "Movie was successfully created." }
         format.json { render :show, status: :created, location: @movie }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -44,9 +50,10 @@ class MoviesController < ApplicationController
 
   # PATCH/PUT /movies/1 or /movies/1.json
   def update
+    @category = Category.find params[:category_id]
     respond_to do |format|
       if @movie.update(movie_params)
-        format.html { redirect_to @movie, notice: "Movie was successfully updated." }
+        format.html { redirect_to category_movie_path(@category.id, @movie), notice: "Movie was successfully created." }
         format.json { render :show, status: :ok, location: @movie }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,8 +65,9 @@ class MoviesController < ApplicationController
   # DELETE /movies/1 or /movies/1.json
   def destroy
     @movie.destroy
+    @category = Category.find params[:category_id]
     respond_to do |format|
-      format.html { redirect_to movies_url, notice: "Movie was successfully destroyed." }
+      format.html { redirect_to category_movies_path(@category.id), notice: "Movie was successfully destroyed." }
       format.json { head :no_content }
     end
   end

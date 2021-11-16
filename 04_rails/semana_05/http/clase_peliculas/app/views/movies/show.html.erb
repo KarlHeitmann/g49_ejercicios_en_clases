@@ -10,5 +10,5 @@
   <%= @movie.lanzamiento %>
 </p>
 
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<%= link_to 'Edit', edit_category_movie_path(@category.id, @movie) %> |
+<%= link_to 'Back', category_movies_path(@category.id)%>
