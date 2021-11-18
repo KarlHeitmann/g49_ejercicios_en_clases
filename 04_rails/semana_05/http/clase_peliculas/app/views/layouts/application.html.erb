@@ -27,6 +27,23 @@
               <%= link_to 'este es el link a la pagina de test. Lo que vemos', movies_test_link_path, class: "nav-link" %>
             </li>
           </ul>
+          <ul class="navbar-nav ms-auto"> <%# HACK como colocar un elemento de menu hacia la derecha %>
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to current_user.nombre, '#', class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Logout', destroy_user_session_path, class: "nav-link", method: :delete %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to 'Iniciar sesión', new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Registro', new_user_registration_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </nav>

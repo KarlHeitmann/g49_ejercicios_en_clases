@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
-  before_action :set_category
+  before_action :set_category, except: %i[ test ]
+  before_action :authenticate_user!
 
   def test
   end
