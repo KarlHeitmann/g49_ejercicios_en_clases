@@ -5,25 +5,9 @@
   <%= @category.name %>
 </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Titulo</th>
-      <th>Lanzamiento</th>
-      <th>Nombre categoria</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.titulo %></td>
-        <td><%= movie.lanzamiento %></td>
-        <td><%= movie.category.name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<p>
+  Cantidad de peliculas de <%= @category.name %>: <%= @category.movies.count %>
+<p>
 
 <%= link_to 'Ver subpeliculas', category_movies_path(@category.id)%>
 
