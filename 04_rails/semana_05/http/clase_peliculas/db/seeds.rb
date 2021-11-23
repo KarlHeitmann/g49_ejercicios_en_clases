@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create!(email: "user1@example.com", password: "asdasd", nombre: "user 1", apellidos: "apellido 1", telefono: "+56 9 1122 3344")
+User.create!(email: "user2@example.com", password: "asdasd", nombre: "user 2", apellidos: "apellido 2", telefono: "+56 9 1122 3345")
+User.create!(email: "user3@example.com", password: "asdasd", nombre: "user 3", apellidos: "apellido 3", telefono: "+56 9 1122 3346")
+
+aventura = Category.create!(name: "aventura")
+drama = Category.create!(name: "drama")
+
+star_wars = Movie.create!(
+    titulo: 'Star Wars', lanzamiento: 30.years.ago, category_id: aventura.id
+)

@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2021_11_18_225929) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false
-    t.string "director"
     t.index ["category_id"], name: "index_movies_on_category_id"
   end
 
