@@ -7,8 +7,24 @@
 <p>
   <h1>Géneros</h1>
   <ul>
-    <% @movie.categories.each do |category| %>
-      <li><%= category.name %></li>
+    <% @movie.category_movies.each do |category_movie| %>
+      <li>
+        <%= category_movie.category.name %>
+        <% if category_movie.percentage.blank? %>
+          <strong>Sin porcentaje de categoria</strong>
+          <%= form_tag(cm_add_percentage_path(category_movie)) do %>
+            <div class="field">
+              <%= label_tag 'percentage', 'Porcentaje' %>
+              <%= text_field_tag 'percentage' %>
+            </div>
+            <div class="field">
+              <%= submit_tag 'Enviar' %>
+            </div>
+          <% end %>
+        <% else %>
+          <%= category_movie.percentage %>
+        <% end %>
+      </li>
     <% end %>
   </ul>
 </p>
