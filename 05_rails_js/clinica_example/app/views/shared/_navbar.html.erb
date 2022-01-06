@@ -15,12 +15,15 @@
     <div class="navbar-start">
       <%= link_to 'Home', root_path, class: 'navbar-item' %>
       <%= link_to 'Médicos', physicians_path, class: 'navbar-item' %>
-      <%= link_to 'Pacientes', '#', class: 'navbar-item' %>
+      <%= link_to 'Pacientes', patients_path, class: 'navbar-item' %>
 
+      <%# Esto es un comentario, abajo un link tal como venía en el ejemplo que copié y pegué %>
       <a class="navbar-item">
         Documentation
       </a>
 
+      <%# Si a futuro quiero meter un link con dropdown, aqui tengo un ejemplo comentado %>
+      <!--
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
           More
@@ -42,8 +45,11 @@
           </a>
         </div>
       </div>
+      -->
     </div>
 
+    <%# Si quisiera colocar el típico botón de login y signup al final de la barra de navegación, aquí lo dejaré comentado %>
+    <!--
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
@@ -56,5 +62,6 @@
         </div>
       </div>
     </div>
+    -->
   </div>
 </nav>
