@@ -1,4 +1,4 @@
-<%= form_tag(cm_add_percentage_path(category_movie)) do %>
+<%= form_tag(cm_add_percentage_path(category_movie), method: :put) do %>
   <div class="field">
     <%= label_tag 'percentage', 'Porcentaje' %>
     <%= text_field_tag 'percentage' %>
