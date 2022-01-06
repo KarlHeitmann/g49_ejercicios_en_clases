@@ -1,0 +1,10 @@
+<%= form_with(url: cm_add_percentage_path(category_movie)) do |f|%>
+  <div class="field">
+    <%= f.label 'percentage', 'Porcentaje' %>
+    <%= f.text_field 'percentage' %>
+  </div>
+  <div class="field">
+    <%= f.submit 'Enviar' %>
+  </div>
+<% end %>
+

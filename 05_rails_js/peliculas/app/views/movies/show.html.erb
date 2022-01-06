@@ -12,7 +12,8 @@
         <%= category_movie.category.name %>
         <% if category_movie.percentage.blank? %>
           <strong>Sin porcentaje de categoria</strong>
-          <%= render partial: 'ej_form_tag', locals: {category_movie: category_movie} %>
+          <%= render partial: 'ej_form_with', locals: {category_movie: category_movie} %>
+          <%#= render partial: 'ej_form_tag', locals: {category_movie: category_movie} %>
         <% else %>
           <%= category_movie.percentage %>
         <% end %>
