@@ -12,15 +12,7 @@
         <%= category_movie.category.name %>
         <% if category_movie.percentage.blank? %>
           <strong>Sin porcentaje de categoria</strong>
-          <%= form_tag(cm_add_percentage_path(category_movie)) do %>
-            <div class="field">
-              <%= label_tag 'percentage', 'Porcentaje' %>
-              <%= text_field_tag 'percentage' %>
-            </div>
-            <div class="field">
-              <%= submit_tag 'Enviar' %>
-            </div>
-          <% end %>
+          <%= render partial: 'ej_form_tag', locals: {category_movie: category_movie} %>
         <% else %>
           <%= category_movie.percentage %>
         <% end %>
