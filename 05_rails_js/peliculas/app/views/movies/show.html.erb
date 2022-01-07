@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h1>
   <strong>Name:</strong>
   <%= @movie.name %>
-</p>
+</h1>
 <p>
-  <h1>Géneros</h1>
+  <h4>Géneros</h4>
   <ul>
     <% @movie.category_movies.each do |category_movie| %>
       <li>
         <%= category_movie.category.name %>
-        <% if category_movie.percentage.blank? %>
+        <% if category_movie.percentage.nil? %>
           <strong>Sin porcentaje de categoria</strong>
           <%= render partial: 'ej_form_with', locals: {category_movie: category_movie} %>
           <%#= render partial: 'ej_form_tag', locals: {category_movie: category_movie} %>
