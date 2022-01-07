@@ -10,33 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_06_211520) do
+ActiveRecord::Schema.define(version: 2022_01_06_224540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: :cascade do |t|
+  create_table "appointments", force: :cascade do |t|
+    t.bigint "physician_id", null: false
+    t.bigint "patient_id", null: false
+    t.datetime "appointment_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_appointments_on_patient_id"
+    t.index ["physician_id"], name: "index_appointments_on_physician_id"
+  end
+
+  create_table "patients", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "category_movies", force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "movie_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.float "percentage"
-    t.index ["category_id"], name: "index_category_movies_on_category_id"
-    t.index ["movie_id"], name: "index_category_movies_on_movie_id"
-  end
-
-  create_table "movies", force: :cascade do |t|
+  create_table "physicians", force: :cascade do |t|
     t.string "name"
+    t.string "speciality"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "category_movies", "categories"
-  add_foreign_key "category_movies", "movies"
+  add_foreign_key "appointments", "patients"
+  add_foreign_key "appointments", "physicians"
 end
