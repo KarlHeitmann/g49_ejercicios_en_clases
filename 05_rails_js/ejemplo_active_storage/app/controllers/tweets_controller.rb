@@ -65,6 +65,6 @@ class TweetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tweet_params
-      params.require(:tweet).permit(:user_id, :content)
+      params.require(:tweet).permit(:user_id, :content, images: [])
     end
 end

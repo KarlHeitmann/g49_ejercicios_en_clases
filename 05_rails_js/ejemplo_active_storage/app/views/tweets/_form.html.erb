@@ -18,6 +18,11 @@
     <%= form.text_field :content %>
   </div>
 
+  <div class="field">
+    <%= form.label :images %><br />
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

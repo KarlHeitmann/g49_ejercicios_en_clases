@@ -7,6 +7,7 @@
     <tr>
       <th>User</th>
       <th>Content</th>
+      <th>Imágenes</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,11 @@
       <tr>
         <td><%= tweet.user.email %></td>
         <td><%= tweet.content %></td>
+        <td>
+          <% tweet.images.each do |image|%>
+            <%= image_tag image, size: "64x64" %>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', tweet %></td>
         <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
         <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
