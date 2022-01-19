@@ -40,7 +40,11 @@
               </ul>
             </li>
             <li class="nav-item">
-              <%= image_tag current_user.avatar, size: "64x64" %>
+              <% if user_signed_in? %>
+                <small><%= current_user.email %></small>
+                <%= image_tag current_user.avatar, size: "64x64" if current_user.avatar.attached? %>
+                <strong>Valor de current_user.avatar.attached? = <%= current_user.avatar.attached? %></strong> <%# HACK Poner especial atención al uso del método .attached? que viene con ActiveStorage %>
+              <% end %>
             </li>
           </ul>
         </div>
