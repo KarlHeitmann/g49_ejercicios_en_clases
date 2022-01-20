@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Boss Id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.email%></td>
+        <td><%= employee.boss_id%></td>
+      </tr>
+    <% end %>
+  <tbody>
+</table>
