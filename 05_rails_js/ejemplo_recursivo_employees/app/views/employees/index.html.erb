@@ -4,6 +4,8 @@
       <th>ID</th>
       <th>Email</th>
       <th>Boss Id</th>
+      <th>JEFE</th>
+      <th>Subempleados</th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +14,19 @@
         <td><%= employee.id%></td>
         <td><%= employee.email%></td>
         <td><%= employee.boss_id%></td>
+        <td>
+          <%= employee.boss.email unless employee.boss_id.nil? %>
+        </td>
+        <td>
+          <ul>
+            <%# Employee.where(boss_id: employee.id).each do |employee| %>
+            <% employee.sub_employees.each do |employee| %>
+              <li>
+                ID: <%=employee.id%> - <%= employee.email  %>
+              </li>
+            <% end %>
+          </ul>
+        </td>
       </tr>
     <% end %>
   <tbody>
