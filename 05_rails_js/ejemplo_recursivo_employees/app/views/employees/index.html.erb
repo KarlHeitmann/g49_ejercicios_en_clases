@@ -1,6 +1,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Email</th>
       <th>Boss Id</th>
     </tr>
@@ -8,6 +9,7 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
+        <td><%= employee.id%></td>
         <td><%= employee.email%></td>
         <td><%= employee.boss_id%></td>
       </tr>
