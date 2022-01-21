@@ -23,6 +23,11 @@
             <% employee.sub_employees.each do |employee| %>
               <li>
                 ID: <%=employee.id%> - <%= employee.email  %>
+                <ul>
+                  <% employee.sub_employees.each do |employee| %>
+                    <li>ID: <%=employee.id%> - <%= employee.email  %></li>
+                  <% end %>
+                </ul>
               </li>
             <% end %>
           </ul>

@@ -7,4 +7,6 @@ class Employee < ApplicationRecord
   has_many :sub_employees, class_name: "Employee", foreign_key: "boss_id"
 
   belongs_to :boss, class_name: "Employee", optional: true
+  # HACK  TAREA: Que busque a toooooooooooooooodos los subempleados de tooooooooooooooodos los niveles
+
 end
