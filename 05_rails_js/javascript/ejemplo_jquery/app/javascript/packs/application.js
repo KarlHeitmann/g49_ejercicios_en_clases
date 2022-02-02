@@ -11,3 +11,11 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(document).ready(function(){
+  $('.alert-close').click(function(){
+    $('.alert').fadeOut('slow', function(){
+      $(this).remove();
+    });
+  });
+});
