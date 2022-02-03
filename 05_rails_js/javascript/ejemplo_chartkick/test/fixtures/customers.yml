@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: customers
+#
+#  id         :bigint           not null, primary key
+#  nombre     :string
+#  pais       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  nombre: MyString
+  pais: MyString
+
+two:
+  nombre: MyString
+  pais: MyString
