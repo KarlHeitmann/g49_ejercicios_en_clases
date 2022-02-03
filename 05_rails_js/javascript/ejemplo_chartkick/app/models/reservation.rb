@@ -19,4 +19,5 @@
 #
 class Reservation < ApplicationRecord
   belongs_to :customer
+  enum kind: [:pagada, :pendiente]
 end
