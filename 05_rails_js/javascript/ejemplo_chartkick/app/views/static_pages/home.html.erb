@@ -1,5 +1,9 @@
 <h1>StaticPages#home</h1>
 <p>Find me in app/views/static_pages/home.html.erb</p>
+
+<%= debug @data_to_chart_1 %> <%# HACK: Uso de debug para ver los datos que a uno le interesa %>
+<%= pie_chart @data_to_chart_1 %>
+
 <% @customers.all.each do |customer| %>
   <ul> <%= customer.nombre %> - Planeta: <%=customer.pais%>
     <% customer.reservations.each do |reservation| %>
