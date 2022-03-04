@@ -1,7 +1,7 @@
 $(document).ready(function() {
   console.log("Documento listo")
   var settings = {
-    "url": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY",
+    "url": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=bIpchVdkvj2Ar0xDaSfmaBcn58dIjy6XtyOZic0S",
     "method": "GET",
     "timeout": 0,
   };
