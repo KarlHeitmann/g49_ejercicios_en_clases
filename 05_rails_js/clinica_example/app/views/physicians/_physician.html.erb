@@ -1,0 +1,7 @@
+<tr>
+  <td><%= physician.name %></td>
+  <td><%= physician.speciality %></td>
+  <td><%= link_to 'Show', physician %></td>
+  <td><%= link_to 'Edit', edit_physician_path(physician) %></td>
+  <td><%= link_to 'Destroy', physician, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

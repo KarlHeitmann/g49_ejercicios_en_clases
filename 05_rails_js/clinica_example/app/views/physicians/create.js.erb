@@ -1,0 +1,3 @@
+console.log("HOLA .js.erb <%= @physician.name %>")
+// HACK: esta linea es equivalente a la de abajo:    document.querySelector('#physicians').innerHTML += '<%= escape_javascript render partial: "physician", locals: {physician: @physician} %>'
+document.querySelector('#physicians').innerHTML += '<%= j render partial: "physician", locals: {physician: @physician} %>'

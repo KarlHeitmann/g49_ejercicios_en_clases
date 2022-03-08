@@ -2,6 +2,8 @@
 
 <h1>Physicians</h1>
 
+<%= render 'form', physician: @physician %>
+
 <table>
   <thead>
     <tr>
@@ -11,16 +13,13 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @physicians.each do |physician| %>
-      <tr>
-        <td><%= physician.name %></td>
-        <td><%= physician.speciality %></td>
-        <td><%= link_to 'Show', physician %></td>
-        <td><%= link_to 'Edit', edit_physician_path(physician) %></td>
-        <td><%= link_to 'Destroy', physician, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <tbody id="physicians">
+    <%# HACK: Linea 18 es equivalente a linea 20, pero linea 18 es el camino corto%>
+    <%= render @physicians %>
+    <%# HACK: El de abajo es equivalente a la linea 18, pero es el camino largo %>
+    <%# @physicians.each do |physician| %>
+      <%#= render partial: "physician", locals: {physician: physician} %>
+    <%# end %>
   </tbody>
 </table>
 
