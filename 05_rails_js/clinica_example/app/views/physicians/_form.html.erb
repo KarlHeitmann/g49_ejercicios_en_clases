@@ -1,4 +1,7 @@
-<%= form_with(model: physician) do |form| %>
+<%= form_with(model: physician, local: false) do |form| %>
+<%# HACK:Para V.5 de RoR deberían colocar algo así (linea 3) %>
+<%# form_for(model: physician, remote: true) do |form| %>
+
   <% if physician.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(physician.errors.count, "error") %> prohibited this physician from being saved:</h2>
