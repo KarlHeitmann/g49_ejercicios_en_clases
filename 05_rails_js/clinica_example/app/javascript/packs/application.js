@@ -11,3 +11,14 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY", requestOptions)
+  .then(response => response.text())
+  .then(response => JSON.parse(response))
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
