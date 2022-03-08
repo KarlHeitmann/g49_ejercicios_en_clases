@@ -24,6 +24,8 @@ class PhysiciansController < ApplicationController
   def create
     @physician = Physician.new(physician_params)
 
+    sleep 0.5
+
     respond_to do |format|
       if @physician.save
         format.html { redirect_to physician_url(@physician), notice: "Physician was successfully created." }
