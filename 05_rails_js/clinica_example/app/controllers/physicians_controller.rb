@@ -4,6 +4,7 @@ class PhysiciansController < ApplicationController
   # GET /physicians or /physicians.json
   def index
     @physicians = Physician.all
+    @physician = Physician.new
   end
 
   # GET /physicians/1 or /physicians/1.json
