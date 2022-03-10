@@ -25,9 +25,13 @@ class PhysiciansController < ApplicationController
     @physician = Physician.new(physician_params)
 
     sleep 0.5
-
+    puts @physician
+    puts @physician.name
+    puts @physician.speciality
+    puts ":::::::::"
     respond_to do |format|
       if @physician.save
+        @physician_new = Physician.new
         format.html { redirect_to physician_url(@physician), notice: "Physician was successfully created." }
         format.json { render :show, status: :created, location: @physician }
         format.js
