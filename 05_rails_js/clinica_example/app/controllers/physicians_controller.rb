@@ -49,9 +49,11 @@ class PhysiciansController < ApplicationController
       if @physician.update(physician_params)
         format.html { redirect_to physician_url(@physician), notice: "Physician was successfully updated." }
         format.json { render :show, status: :ok, location: @physician }
+        format.js
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @physician.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

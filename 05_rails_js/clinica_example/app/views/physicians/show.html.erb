@@ -2,30 +2,7 @@
 
 <%= link_to 'Root path', root_path, data: {confirm: 'Desea volver a root_path?' }%>
 
-<p>
-  <strong>Name:</strong>
-  <%= @physician.name %>
-</p>
-
-<p>
-  <strong>Speciality:</strong>
-  <%= @physician.speciality %>
-</p>
-
-<p>
-  <h4>Citas a futuro</h4>
-  <ul>
-    <% @physician.appointments.futures.each do |appointment| %>
-      <li><%= appointment.patient.name %> - <%= appointment.appointment_date %></li>
-    <% end %>
-  </ul>
-  <h4>Historial de citas</h4>
-  <ul>
-    <% @physician.appointments.pasts.each do |appointment| %>
-      <li><%= appointment.patient.name %> - <%= appointment.appointment_date %></li>
-    <% end %>
-  </ul>
-</p>
+<%= render partial: 'physician_complete', locals: {physician: @physician} %>
 
 <%= link_to 'Edit', edit_physician_path(@physician) %> |
 <%= link_to 'Back', physicians_path %>
