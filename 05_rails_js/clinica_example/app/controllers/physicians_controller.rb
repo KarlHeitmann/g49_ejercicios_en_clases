@@ -1,6 +1,31 @@
 class PhysiciansController < ApplicationController
   before_action :set_physician, only: %i[ show edit update destroy ]
 
+  def all_data_physician
+    # @physicians = Physician.all.map {|p| {...physician, appointments: p.appointments} } # Revisar el atajo
+    
+    
+    
+    # @physicians = Physician.all # Esto es equivalente al de abajo
+    
+    @physicians = []
+    Physician.all.each do |physician|
+      data_physician_complete = {}
+
+      data_physician_complete["physician_data"] = physician
+      data_physician_complete["appointments"] = physician.appointments
+      # @physicians << physician
+      @physicians << data_physician_complete
+    end
+    
+    
+    if @physicians.empty?
+      render json: {}, status: :not_found
+    else
+      render json: { physicians: @physicians}, status: :ok
+    end
+  end
+
   # GET /physicians or /physicians.json
   def index
     @physicians = Physician.all
