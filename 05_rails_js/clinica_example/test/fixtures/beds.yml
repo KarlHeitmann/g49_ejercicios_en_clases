@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero_de_cama: MyString
+  tipo: MyString
+
+two:
+  numero_de_cama: MyString
+  tipo: MyString
